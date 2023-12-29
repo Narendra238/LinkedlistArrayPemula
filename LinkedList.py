@@ -14,15 +14,13 @@ def searchLinkedList(linkedList,key):
             return linkedList
         linkedList = linkedList['Next']
     return None
-def countNodes(linkedlist):#jumlah node
-    if not linkedlist:
-        return False
-    count = 1  # Count head head node
-    temp = linkedlist['Next']
-    while temp != None and temp != linkedlist:
-        count += 1
-        temp = temp['Next']
-    return count
+
+def nodeCount(linkedList): 
+    counter = 0
+    while linkedList:
+        linkedList = linkedList['Next']
+        counter = counter + 1
+    return counter
 #================= Main function =================#
 linkedlist = None#input linked list
 batas = int(input("Batas Linkedlist : "))
@@ -41,4 +39,4 @@ else:
 linkedlist
 #hitung jumlah node
 
-print("Jumlah node : ",countNodes(linkedlist))#jumlah node
+print("Jumlah node : ",nodeCount(linkedlist))#jumlah node
